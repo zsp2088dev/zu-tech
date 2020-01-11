@@ -10,16 +10,21 @@ const client = createClient(config)
 
 // Contentfulより全記事取得
 export const findAllEntries = () => {
-  return client.getEntries(contentType).then((entries) => {
-    return entries.items.map((value) => {
-      return {
-        title: value.fields.title,
-        slug: value.fields.slug,
-        image: value.fields.image,
-        body: value.fields.body
-      }
+  return client
+    .getEntries({
+      content_type: contentType,
+      order: '-sys.createdAt'
     })
-  })
+    .then((entries) => {
+      return entries.items.map((value) => {
+        return {
+          title: value.fields.title,
+          slug: value.fields.slug,
+          image: value.fields.image,
+          body: value.fields.body
+        }
+      })
+    })
 }
 
 // IDを指定して特定の記事を取得
