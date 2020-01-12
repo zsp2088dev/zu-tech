@@ -14,6 +14,14 @@ export default {
         name: 'description',
         content: process.env.npm_package_description || ''
       }
+    ],
+    link: [
+      {
+        rel: 'icon',
+        type: 'image/png',
+        sizes: '32×32',
+        href: '/favicon.png'
+      }
     ]
   },
   loading: { color: '#fff' },
