@@ -1,6 +1,8 @@
 <div align="center">
-<img src="https://user-images.githubusercontent.com/33179078/72317233-e8d17400-36db-11ea-9630-141cf75a178e.png" alt="image" title="ZU TECH">
+<img src="https://user-images.githubusercontent.com/33179078/72317233-e8d17400-36db-11ea-9630-141cf75a178e.png" alt="image" title="ZU TECH"><br><br>
 </div>
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/e793d249-10fa-4b02-96ea-0aa6540a1580/deploy-status)](https://app.netlify.com/sites/zu-tech/deploys)
 
 ## App URL
 - zu-tech.netlify.com
