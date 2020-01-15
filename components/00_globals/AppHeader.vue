@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <v-container class="app-header">
     <v-row justify="center" align-content="center">
       <v-col cols="1">
         <app-logo />
@@ -15,3 +15,9 @@ export default {
   components: { AppLogo }
 }
 </script>
+
+<style scoped lang="scss">
+.app-header {
+  border-bottom: solid 1px $border-base;
+}
+</style>
