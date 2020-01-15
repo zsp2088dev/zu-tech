@@ -1,7 +1,7 @@
 <template>
-  <v-container class="app-header">
+  <v-container fluid class="app-header">
     <v-row justify="center" align-content="center">
-      <v-col cols="1">
+      <v-col cols="auto">
         <app-logo />
       </v-col>
     </v-row>
