@@ -1,5 +1,5 @@
 <template>
-  <v-card width="400" height="300" max-width="400" max-height="300">
+  <v-card width="300" height="225" max-width="300" max-height="225">
     <card-img :src="src" />
     <card-title :title="title" />
     <card-text :text="text" />

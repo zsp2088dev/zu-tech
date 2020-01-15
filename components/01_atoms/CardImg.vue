@@ -1,5 +1,5 @@
 <template>
-  <v-img :alt="title" :src="src" width="400px" height="150px" />
+  <v-img :alt="title" :src="src" width="300px" height="112.5px" />
 </template>
 
 <script>

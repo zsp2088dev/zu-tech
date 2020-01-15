@@ -18,7 +18,7 @@ export default {
 
 <style scoped lang="scss">
 .card-text {
-  font-size: 11px;
+  font-size: 12px;
   color: $secondary-text;
   line-height: 1.3;
 }
