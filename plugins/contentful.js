@@ -19,8 +19,9 @@ export const findAllEntries = () => {
       return entries.items.map((value) => {
         return {
           title: value.fields.title,
+          text: value.fields.text,
           slug: value.fields.slug,
-          image: value.fields.image,
+          src: `https:${value.fields.image.fields.file.url}`,
           body: value.fields.body
         }
       })
@@ -33,8 +34,9 @@ export const findEntryById = (id) => {
     const entry = entries.items[0]
     return {
       title: entry.fields.title,
+      text: entry.fields.text,
       slug: entry.fields.slug,
-      image: entry.fields.image,
+      src: `https:${entry.fields.image.fields.file.url}`,
       body: entry.fields.body
     }
   })
