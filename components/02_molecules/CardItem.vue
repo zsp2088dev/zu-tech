@@ -1,9 +1,19 @@
 <template>
-  <v-card width="300" height="225" max-width="300" max-height="225">
-    <card-img :src="src" />
-    <card-title :title="title" />
-    <card-text :text="text" />
-  </v-card>
+  <nuxt-link :to="url" style="text-decoration: none">
+    <v-hover v-slot:default="{ hover }">
+      <v-card
+        :elevation="hover ? 7 : 2"
+        width="300"
+        height="225"
+        max-width="300"
+        max-height="225"
+      >
+        <card-img :src="src" />
+        <card-title :title="title" />
+        <card-text :text="text" />
+      </v-card>
+    </v-hover>
+  </nuxt-link>
 </template>
 
 <script>
@@ -14,6 +24,10 @@ export default {
   name: 'CardItem',
   components: { CardText, CardTitle, CardImg },
   props: {
+    slug: {
+      type: String,
+      default: ''
+    },
     src: {
       type: String,
       default: ''
@@ -25,6 +39,11 @@ export default {
     text: {
       type: String,
       default: ''
+    }
+  },
+  computed: {
+    url() {
+      return `/posts/${this.slug}`
     }
   }
 }

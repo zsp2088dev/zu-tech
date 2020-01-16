@@ -5,7 +5,7 @@ const config = {
   accessToken: process.env.CTF_ACCESS_TOKEN
 }
 
-const contentType = process.env.CTF_CONTENT_TYPE
+const contentType = process.env.CTF_CONTENT_TYPE_ID
 const client = createClient(config)
 
 // Contentfulより全記事取得
@@ -30,14 +30,19 @@ export const findAllEntries = () => {
 
 // IDを指定して特定の記事を取得
 export const findEntryById = (id) => {
-  return client.getEntries(id).then((entries) => {
-    const entry = entries.items[0]
-    return {
-      title: entry.fields.title,
-      text: entry.fields.text,
-      slug: entry.fields.slug,
-      src: `https:${entry.fields.image.fields.file.url}`,
-      body: entry.fields.body
-    }
-  })
+  return client
+    .getEntries({
+      content_type: contentType,
+      'fields.slug': id
+    })
+    .then((entries) => {
+      const entry = entries.items[0]
+      return {
+        title: entry.fields.title,
+        text: entry.fields.text,
+        slug: entry.fields.slug,
+        src: `https:${entry.fields.image.fields.file.url}`,
+        body: entry.fields.body
+      }
+    })
 }

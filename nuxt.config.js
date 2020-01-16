@@ -1,4 +1,8 @@
+import { createClient } from 'contentful'
+import { config } from 'dotenv'
 import website from './config/website'
+
+config()
 
 export default {
   mode: 'spa',
@@ -40,5 +44,19 @@ export default {
   },
   build: {
     extend(config, ctx) {}
+  },
+  generate: {
+    async routes() {
+      const config = {
+        space: process.env.CTF_SPACE_ID,
+        accessToken: process.env.CTF_ACCESS_TOKEN
+      }
+      const contentType = process.env.CTF_CONTENT_TYPE_ID
+      const client = createClient(config)
+      const routing = await client.getEntries(contentType).then((entries) => {
+        return [...entries.items.map((entry) => `/posts/${entry.fields.slug}`)]
+      })
+      return routing
+    }
   }
 }

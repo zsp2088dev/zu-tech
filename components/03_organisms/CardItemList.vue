@@ -2,7 +2,12 @@
   <v-container>
     <v-row justify="center" align-content="start">
       <v-col v-for="(card, index) in cards" :key="index" cols="auto">
-        <card-item :src="card.src" :title="card.title" :text="card.text" />
+        <card-item
+          :slug="card.slug"
+          :src="card.src"
+          :title="card.title"
+          :text="card.text"
+        />
       </v-col>
     </v-row>
   </v-container>
