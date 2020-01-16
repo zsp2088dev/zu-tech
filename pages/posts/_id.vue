@@ -16,9 +16,12 @@ export default {
       return this.$md.render(body)
     }
   },
-  async asyncData({ params }) {
-    const entry = await findEntryById(params.id)
-    return { entry }
+  async asyncData({ params, payload }) {
+    if (payload) {
+      return { entry: payload }
+    } else {
+      return { entry: await findEntryById(params.id) }
+    }
   }
 }
 </script>

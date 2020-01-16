@@ -48,12 +48,21 @@ export default {
     async routes() {
       const config = {
         space: process.env.CTF_SPACE_ID,
-        accessToken: process.env.CTF_ACCESS_TOKEN
+        accessToken: process.env.CTF_ACCESS_TOKEN,
+        timeout: 60000,
+        retryLimit: 10
       }
       const contentType = process.env.CTF_CONTENT_TYPE_ID
       const client = createClient(config)
       const routing = await client.getEntries(contentType).then((entries) => {
-        return [...entries.items.map((entry) => `/posts/${entry.fields.slug}`)]
+        return [
+          ...entries.items.map((entry) => {
+            return {
+              route: `/posts/${entry.fields.slug}`,
+              payload: entry
+            }
+          })
+        ]
       })
       return routing
     }
