@@ -1,10 +1,18 @@
 <template>
   <nuxt-link :to="url" style="text-decoration: none">
-    <v-card width="300" height="225" max-width="300" max-height="225">
-      <card-img :src="src" />
-      <card-title :title="title" />
-      <card-text :text="text" />
-    </v-card>
+    <v-hover v-slot:default="{ hover }">
+      <v-card
+        :elevation="hover ? 7 : 2"
+        width="300"
+        height="225"
+        max-width="300"
+        max-height="225"
+      >
+        <card-img :src="src" />
+        <card-title :title="title" />
+        <card-text :text="text" />
+      </v-card>
+    </v-hover>
   </nuxt-link>
 </template>
 
