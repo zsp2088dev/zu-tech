@@ -1,8 +1,7 @@
 import { createClient } from 'contentful'
-import { config } from 'dotenv'
 import website from './config/website'
 
-config()
+require('dotenv').config()
 
 export default {
   mode: 'spa',
