@@ -1,0 +1,22 @@
+<template>
+  <v-container>
+    <v-row justify="center" align-content="center">
+      <v-col v-for="(tag, index) in tags" :key="index" cols="auto">
+        <tag-item :tag="tag" />
+      </v-col>
+    </v-row>
+  </v-container>
+</template>
+
+<script>
+import TagItem from '../02_molecules/TagItem'
+export default {
+  name: 'TagItemList',
+  components: { TagItem },
+  data() {
+    return {
+      tags: ['ALL', 'WEB', 'DESIGN']
+    }
+  }
+}
+</script>
