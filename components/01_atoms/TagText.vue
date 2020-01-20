@@ -18,6 +18,8 @@ export default {
 
 <style scoped lang="scss">
 .tag-text {
+  font-family: 'Helvetica Neue', sans-serif;
+  font-weight: 300;
   font-size: 20px;
   color: $primary-text;
 }
