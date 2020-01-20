@@ -20,6 +20,7 @@ export default {
 .card-title {
   color: $primary-text;
   font-size: 16px;
+  font-weight: 400;
   line-height: 1.4;
 }
 </style>
