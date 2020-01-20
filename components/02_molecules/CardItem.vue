@@ -4,9 +4,9 @@
       <v-card
         :elevation="hover ? 6 : 2"
         width="350"
-        height="250"
+        height="280"
         max-width="350"
-        max-height="250"
+        max-height="280"
       >
         <card-img :src="src" />
         <card-title :title="title" />
