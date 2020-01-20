@@ -2,11 +2,11 @@
   <nuxt-link :to="url" style="text-decoration: none">
     <v-hover v-slot:default="{ hover }">
       <v-card
-        :elevation="hover ? 7 : 2"
-        width="300"
-        height="225"
-        max-width="300"
-        max-height="225"
+        :elevation="hover ? 6 : 2"
+        width="350"
+        height="280"
+        max-width="350"
+        max-height="280"
       >
         <card-img :src="src" />
         <card-title :title="title" />

@@ -34,7 +34,7 @@ export default {
     left: 0;
     content: '';
     width: 100%;
-    height: 2px;
+    height: 1px;
     background: #333;
     transform: scale(0, 1);
     transform-origin: center top;

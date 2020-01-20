@@ -8,10 +8,10 @@
 <script>
 import CardItemList from '../components/03_organisms/CardItemList'
 import { findAllEntries } from '../plugins/contentful'
-import SearchBox from '../components/02_molecules/SearchBox'
 import TagItemList from '../components/03_organisms/TagItemList'
+import SearchBox from '../components/02_molecules/SearchBox'
 export default {
-  components: { TagItemList, SearchBox, CardItemList },
+  components: { SearchBox, TagItemList, CardItemList },
   async asyncData() {
     const entries = await findAllEntries()
     return { entries }

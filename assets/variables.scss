@@ -1,5 +1,8 @@
-$font-family: Helvetica Neue, Helvetica, Hiragino Sans, 'ヒラギノ角ゴ ProN W3',
-  Hiragino Kaku Gothic ProN, 'メイリオ', Meiryo, sans-serif;
+$body-font-family: Helvetica Neue, Helvetica, Hiragino Sans,
+  'ヒラギノ角ゴ ProN W3', Hiragino Kaku Gothic ProN, 'メイリオ', Meiryo,
+  sans-serif !important;
+
+@import '~vuetify/src/styles/styles.sass';
 
 // colors
 $primary: #b8d8ba;

@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <v-row justify="center" align-content="center">
+    <v-row justify="center" align-content="center" style="height: 50px">
       <v-col v-for="(tag, index) in tags" :key="index" cols="auto">
         <tag-item :tag="tag" />
       </v-col>
