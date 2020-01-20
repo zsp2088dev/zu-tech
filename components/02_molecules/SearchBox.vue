@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <v-row justify="center" align-content="center">
+    <v-row justify="center" align-content="center" style="height: 100px">
       <v-col cols="auto">
         <label>
           <input
