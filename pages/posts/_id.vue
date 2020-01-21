@@ -12,6 +12,8 @@
       </v-col>
     </v-row>
 
+    <share-btn-list />
+
     <post-content :body="entry.body" />
   </v-container>
 </template>
@@ -21,9 +23,10 @@ import { findEntryById } from '../../plugins/contentful'
 import PostTitle from '../../components/01_atoms/PostTitle'
 import PostImg from '../../components/01_atoms/PostImg'
 import PostContent from '../../components/03_organisms/PostContent'
+import ShareBtnList from '../../components/03_organisms/ShareBtnList'
 
 export default {
-  components: { PostContent, PostImg, PostTitle },
+  components: { ShareBtnList, PostContent, PostImg, PostTitle },
   async asyncData({ params, payload }) {
     if (payload) {
       return { entry: payload }
