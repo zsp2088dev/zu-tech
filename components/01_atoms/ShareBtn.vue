@@ -1,0 +1,33 @@
+<template>
+  <img
+    :src="src"
+    :alt="service"
+    @mouseover="active = true"
+    @mouseleave="active = false"
+    height="50"
+    width="50"
+  />
+</template>
+
+<script>
+export default {
+  name: 'ShareBtn',
+  props: {
+    service: {
+      type: String,
+      default: ''
+    }
+  },
+  data() {
+    return {
+      active: false
+    }
+  },
+  computed: {
+    src() {
+      const status = this.active ? 'on' : 'off'
+      return require(`@/assets/icons/${this.service}-${status}.svg`)
+    }
+  }
+}
+</script>

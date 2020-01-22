@@ -1,21 +1,32 @@
 <template>
-  <v-container>
-    <v-layout>
-      <div v-html="contents" class="markdown" />
-    </v-layout>
+  <v-container class="post-page">
+    <v-row justify="center" align-content="center">
+      <v-col cols="auto">
+        <post-title :title="entry.title" />
+      </v-col>
+    </v-row>
+
+    <v-row justify="center" align-content="center">
+      <v-col cols="auto">
+        <post-img :src="entry.src" />
+      </v-col>
+    </v-row>
+
+    <share-btn-list />
+
+    <post-content :body="entry.body" />
   </v-container>
 </template>
 
 <script>
 import { findEntryById } from '../../plugins/contentful'
+import PostTitle from '../../components/01_atoms/PostTitle'
+import PostImg from '../../components/01_atoms/PostImg'
+import PostContent from '../../components/03_organisms/PostContent'
+import ShareBtnList from '../../components/03_organisms/ShareBtnList'
 
 export default {
-  computed: {
-    contents() {
-      const body = this.entry.body
-      return this.$md.render(body)
-    }
-  },
+  components: { ShareBtnList, PostContent, PostImg, PostTitle },
   async asyncData({ params, payload }) {
     if (payload) {
       return { entry: payload }
@@ -25,3 +36,9 @@ export default {
   }
 }
 </script>
+
+<style scoped lang="scss">
+.post-page {
+  max-width: 800px;
+}
+</style>
