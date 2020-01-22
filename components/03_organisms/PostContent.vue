@@ -54,7 +54,16 @@ export default {
 
   p {
     color: $secondary-text;
-    font-size: 14px;
+    font-size: 15px;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  ul,
+  li {
+    color: $secondary-text;
   }
 }
 </style>
