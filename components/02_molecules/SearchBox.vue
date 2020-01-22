@@ -4,7 +4,7 @@
       <v-col cols="auto">
         <label>
           <input
-            v-model="keyword"
+            v-model="inputKeyword"
             type="text"
             placeholder="SEARCH"
             class="search-field"
@@ -21,6 +21,17 @@ export default {
   data() {
     return {
       keyword: ''
+    }
+  },
+  computed: {
+    inputKeyword: {
+      get() {
+        return this.keyword
+      },
+      set(keyword) {
+        this.keyword = keyword
+        this.$emit('keyword', keyword)
+      }
     }
   }
 }
