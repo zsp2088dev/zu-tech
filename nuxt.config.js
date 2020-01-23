@@ -14,6 +14,56 @@ export default {
         hid: 'description',
         name: 'description',
         content: website.description
+      },
+      {
+        hid: 'og:site_name',
+        property: 'og:site_name',
+        content: website.title
+      },
+      {
+        hid: 'og:type',
+        property: 'og:type',
+        content: 'website'
+      },
+      {
+        hid: 'og:url',
+        property: 'og:url',
+        content: website.url
+      },
+      {
+        hid: 'og:title',
+        property: 'og:title',
+        content: website.title
+      },
+      {
+        hid: 'og:description',
+        property: 'og:description',
+        content: website.description
+      },
+      {
+        hid: 'og:image',
+        property: 'og:image',
+        content: '~/image.png'
+      },
+      {
+        name: 'twitter:site',
+        content: website.url
+      },
+      {
+        name: 'twitter:card',
+        content: 'summary_large_image'
+      },
+      {
+        name: 'twitter:title',
+        content: website.title
+      },
+      {
+        name: 'twitter:image',
+        content: '~/image.png'
+      },
+      {
+        name: 'twitter:description',
+        content: website.description
       }
     ],
     link: [
