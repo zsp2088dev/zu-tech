@@ -5,7 +5,6 @@
         <post-title :title="entry.title" />
       </v-col>
     </v-row>
-
     <v-row justify="center" align-content="center">
       <v-col cols="auto">
         <post-img :src="entry.src" />
@@ -27,6 +26,33 @@ import ShareItemList from '../../components/03_organisms/ShareItemList'
 
 export default {
   components: { ShareItemList, PostContent, PostImg, PostTitle },
+  head() {
+    return {
+      title: `${this.entry.title} | ${process.env.website.title}`,
+      meta: [
+        {
+          hid: 'og:url',
+          property: 'og:url',
+          content: `${process.env.website.url}/${this.$route.path}`
+        },
+        {
+          hid: 'og:title',
+          property: 'og:title',
+          content: `${this.entry.title} | ${process.env.website.title}`
+        },
+        {
+          hid: 'og:image',
+          property: 'og:image',
+          content: this.entry.src
+        },
+        {
+          hid: 'twitter:image:src',
+          property: 'twitter:image:src',
+          content: this.entry.src
+        }
+      ]
+    }
+  },
   async asyncData({ params, payload }) {
     if (payload) {
       return { entry: payload }
