@@ -48,7 +48,7 @@ export default {
         {
           hid: 'og:url',
           property: 'og:url',
-          content: `${process.env.website.url}/${this.$route.path}`
+          content: `${process.env.website.url}${this.$route.path}`
         },
         {
           hid: 'og:title',
@@ -69,7 +69,7 @@ export default {
         {
           hid: 'twitter:site',
           name: 'twitter:site',
-          content: `${process.env.website.url}/${this.$route.path}`
+          content: `${process.env.website.url}${this.$route.path}`
         },
         {
           hid: 'twitter:card',
