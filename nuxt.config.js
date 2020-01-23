@@ -43,25 +43,30 @@ export default {
       {
         hid: 'og:image',
         property: 'og:image',
-        content: '~/image.png'
+        content: '/image.png'
       },
       {
+        hid: 'twitter:site',
         name: 'twitter:site',
         content: website.url
       },
       {
+        hid: 'twitter:card',
         name: 'twitter:card',
         content: 'summary_large_image'
       },
       {
+        hid: 'twitter:title',
         name: 'twitter:title',
         content: website.title
       },
       {
+        hid: 'twitter:image',
         name: 'twitter:image',
-        content: '~/image.png'
+        content: '/image.png'
       },
       {
+        hid: 'twitter:description',
         name: 'twitter:description',
         content: website.description
       }
