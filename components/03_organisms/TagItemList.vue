@@ -2,7 +2,9 @@
   <v-container>
     <v-row justify="center" align-content="center" style="height: 50px">
       <v-col v-for="(tag, index) in tags" :key="index" cols="auto">
-        <tag-item :tag="tag" />
+        <div @click="click(tag)">
+          <tag-item :tag="tag" />
+        </div>
       </v-col>
     </v-row>
   </v-container>
@@ -16,6 +18,12 @@ export default {
   data() {
     return {
       tags: ['ALL', 'WEB', 'DESIGN']
+    }
+  },
+  methods: {
+    click(tag) {
+      const keyword = tag === 'ALL' ? '' : tag
+      this.$emit('keyword', keyword)
     }
   }
 }
