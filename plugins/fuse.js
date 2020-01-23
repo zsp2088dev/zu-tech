@@ -1,7 +1,7 @@
 import Fuse from 'fuse.js'
 
 export const getFilteredEntries = (keyword, entries) => {
-  if (keyword.length === 0) {
+  if (keyword.length === 0 || keyword === 'ALL') {
     return entries
   }
 

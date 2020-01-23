@@ -22,8 +22,7 @@ export default {
   },
   methods: {
     click(tag) {
-      const keyword = tag === 'ALL' ? '' : tag
-      this.$emit('keyword', keyword)
+      this.$emit('keyword', tag)
     }
   }
 }
