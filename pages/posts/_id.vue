@@ -31,6 +31,21 @@ export default {
       title: `${this.entry.title} | ${process.env.website.title}`,
       meta: [
         {
+          hid: 'description',
+          name: 'description',
+          content: this.entry.text
+        },
+        {
+          hid: 'og:site_name',
+          property: 'og:site_name',
+          content: `${this.entry.title} | ${process.env.website.title}`
+        },
+        {
+          hid: 'og:type',
+          property: 'og:type',
+          content: 'website'
+        },
+        {
           hid: 'og:url',
           property: 'og:url',
           content: `${process.env.website.url}/${this.$route.path}`
@@ -40,15 +55,36 @@ export default {
           property: 'og:title',
           content: `${this.entry.title} | ${process.env.website.title}`
         },
+
+        {
+          hid: 'og:description',
+          property: 'og:description',
+          content: this.entry.text
+        },
         {
           hid: 'og:image',
           property: 'og:image',
           content: this.entry.src
         },
         {
-          hid: 'twitter:image:src',
-          property: 'twitter:image:src',
+          name: 'twitter:site',
+          content: `${process.env.website.url}/${this.$route.path}`
+        },
+        {
+          name: 'twitter:card',
+          content: 'summary_large_image'
+        },
+        {
+          name: 'twitter:title',
+          content: `${this.entry.title} | ${process.env.website.title}`
+        },
+        {
+          name: 'twitter:image',
           content: this.entry.src
+        },
+        {
+          name: 'twitter:description',
+          content: this.entry.text
         }
       ]
     }
