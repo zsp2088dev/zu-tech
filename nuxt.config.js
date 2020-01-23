@@ -43,7 +43,7 @@ export default {
       {
         hid: 'og:image',
         property: 'og:image',
-        content: '/image.png'
+        content: `${website.url}/image.png`
       },
       {
         hid: 'twitter:card',
