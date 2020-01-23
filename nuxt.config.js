@@ -6,7 +6,7 @@ require('dotenv').config()
 export default {
   mode: 'spa',
   head: {
-    title: process.env.WEBSITE_TITLE,
+    title: website.title,
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -68,7 +68,7 @@ export default {
     }
   },
   env: {
-    WEBSITE_TITLE: website.title,
+    website,
     CTF_SPACE_ID: process.env.CTF_SPACE_ID,
     CTF_ACCESS_TOKEN: process.env.CTF_ACCESS_TOKEN,
     CTF_CONTENT_TYPE_ID: process.env.CTF_CONTENT_TYPE_ID
