@@ -67,29 +67,9 @@ export default {
           content: this.entry.src
         },
         {
-          hid: 'twitter:site',
-          name: 'twitter:site',
-          content: `${process.env.website.url}/${this.$route.path}`
-        },
-        {
           hid: 'twitter:card',
           name: 'twitter:card',
           content: 'summary_large_image'
-        },
-        {
-          hid: 'twitter:title',
-          name: 'twitter:title',
-          content: `${this.entry.title} | ${process.env.website.title}`
-        },
-        {
-          hid: 'twitter:image',
-          name: 'twitter:image',
-          content: this.entry.src
-        },
-        {
-          hid: 'twitter:description',
-          name: 'twitter:description',
-          content: this.entry.text
         }
       ]
     }
