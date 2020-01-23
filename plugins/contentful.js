@@ -22,7 +22,8 @@ export const findAllEntries = () => {
           text: value.fields.text,
           slug: value.fields.slug,
           src: `https:${value.fields.image.fields.file.url}`,
-          body: value.fields.body
+          body: value.fields.body,
+          tags: value.fields.tags
         }
       })
     })
@@ -42,7 +43,8 @@ export const findEntryById = (id) => {
         text: entry.fields.text,
         slug: entry.fields.slug,
         src: `https:${entry.fields.image.fields.file.url}`,
-        body: entry.fields.body
+        body: entry.fields.body,
+        tags: entry.fields.tags
       }
     })
 }
