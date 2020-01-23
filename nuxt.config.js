@@ -27,7 +27,7 @@ export default {
   },
   loading: { color: '#fff' },
   css: [],
-  plugins: ['@/plugins/fuse'],
+  plugins: ['@/plugins/fuse', '@/plugins/sns'],
   buildModules: ['@nuxtjs/eslint-module', '@nuxtjs/vuetify'],
   modules: ['@nuxtjs/pwa', '@nuxtjs/dotenv', '@nuxtjs/markdownit'],
   vuetify: {
