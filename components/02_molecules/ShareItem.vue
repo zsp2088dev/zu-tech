@@ -22,7 +22,7 @@ export default {
   },
   computed: {
     shareUrl() {
-      const url = `https://zu-tech.netlify.com${this.$route.path}`
+      const url = `${process.env.website.url}${this.$route.path}`
       return generateShareUrl(this.service, this.title, url)
     }
   }

@@ -13,7 +13,7 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: process.env.npm_package_description || ''
+        content: website.description
       }
     ],
     link: [
@@ -68,6 +68,7 @@ export default {
     }
   },
   env: {
+    website,
     CTF_SPACE_ID: process.env.CTF_SPACE_ID,
     CTF_ACCESS_TOKEN: process.env.CTF_ACCESS_TOKEN,
     CTF_CONTENT_TYPE_ID: process.env.CTF_CONTENT_TYPE_ID
