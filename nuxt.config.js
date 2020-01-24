@@ -4,7 +4,7 @@ import website from './config/website'
 require('dotenv').config()
 
 export default {
-  mode: 'spa',
+  mode: 'universal',
   head: {
     title: website.title,
     meta: [
