@@ -43,7 +43,7 @@ export default {
         {
           hid: 'og:type',
           property: 'og:type',
-          content: 'website'
+          content: 'article'
         },
         {
           hid: 'og:url',
