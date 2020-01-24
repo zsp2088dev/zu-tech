@@ -90,14 +90,19 @@ export default {
       const contentType = process.env.CTF_CONTENT_TYPE_ID
       const client = createClient(config)
       const routing = await client.getEntries(contentType).then((entries) => {
-        return [
-          ...entries.items.map((entry) => {
-            return {
-              route: `/posts/${entry.fields.slug}`,
-              payload: entry
+        return entries.items.map((entry) => {
+          return {
+            route: `/posts/${entry.fields.slug}`,
+            payload: {
+              title: entry.fields.title,
+              text: entry.fields.text,
+              slug: entry.fields.slug,
+              src: `https:${entry.fields.image.fields.file.url}`,
+              body: entry.fields.body,
+              tags: entry.fields.tags
             }
-          })
-        ]
+          }
+        })
       })
       return routing
     }
