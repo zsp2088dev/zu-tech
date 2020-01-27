@@ -65,5 +65,9 @@ export default {
   li {
     color: $secondary-text;
   }
+
+  img {
+    max-height: 450px;
+  }
 }
 </style>
