@@ -53,7 +53,7 @@ export default {
   }
 
   p {
-    color: $secondary-text;
+    color: $regular-text;
     font-size: 15px;
   }
 
@@ -63,7 +63,7 @@ export default {
 
   ul,
   li {
-    color: $secondary-text;
+    color: $regular-text;
   }
 
   img {
