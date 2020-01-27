@@ -69,5 +69,10 @@ export default {
   img {
     max-height: 450px;
   }
+
+  ul,
+  ol {
+    margin-bottom: 15px;
+  }
 }
 </style>
