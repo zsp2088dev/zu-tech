@@ -1,5 +1,6 @@
 import { createClient } from 'contentful'
 import website from './config/website'
+import { findAllEntries, findAllEntriesWithConfig } from './plugins/contentful'
 
 require('dotenv').config()
 
@@ -87,24 +88,16 @@ export default {
         timeout: 60000,
         retryLimit: 10
       }
-      const contentType = process.env.CTF_CONTENT_TYPE_ID
-      const client = createClient(config)
-      const routing = await client.getEntries(contentType).then((entries) => {
-        return entries.items.map((entry) => {
-          return {
-            route: `/posts/${entry.fields.slug}`,
-            payload: {
-              title: entry.fields.title,
-              text: entry.fields.text,
-              slug: entry.fields.slug,
-              src: `https:${entry.fields.image.fields.file.url}`,
-              body: entry.fields.body,
-              tags: entry.fields.tags
-            }
-          }
-        })
+      const entries = await findAllEntriesWithConfig(
+        config,
+        process.env.CTF_CONTENT_TYPE_ID
+      )
+      return entries.map((entry) => {
+        return {
+          route: `/posts/${entry.slug}`,
+          payload: entry
+        }
       })
-      return routing
     }
   },
   env: {
