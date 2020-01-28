@@ -67,7 +67,10 @@ export default {
   }
 
   img {
+    width: 100%;
     max-height: 450px;
+    max-width: 800px;
+    margin: 30px 0;
   }
 
   ul,
