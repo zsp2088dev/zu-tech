@@ -53,7 +53,7 @@ export default {
   }
 
   p {
-    color: $secondary-text;
+    color: $regular-text;
     font-size: 15px;
   }
 
@@ -63,7 +63,18 @@ export default {
 
   ul,
   li {
-    color: $secondary-text;
+    color: $regular-text;
+  }
+
+  img {
+    width: 100%;
+    max-width: 800px;
+    margin: 30px 0;
+  }
+
+  ul,
+  ol {
+    margin-bottom: 15px;
   }
 }
 </style>
