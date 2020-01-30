@@ -1,5 +1,11 @@
 <template>
-  <v-img :alt="title" :src="src" width="640px" height="275px" />
+  <v-img
+    :alt="title"
+    :src="src"
+    :contain="true"
+    height="275px"
+    max-width="640px"
+  />
 </template>
 
 <script>
