@@ -88,8 +88,4 @@ export default {
 .post-page {
   max-width: 800px;
 }
-
-.post-content {
-  margin-bottom: 50px;
-}
 </style>
