@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import { findEntryById } from '../../plugins/contentful'
+import { findEntryBySlug } from '../../plugins/contentful'
 import PostTitle from '../../components/01_atoms/PostTitle'
 import PostImg from '../../components/01_atoms/PostImg'
 import PostContent from '../../components/03_organisms/PostContent'
@@ -78,7 +78,7 @@ export default {
     if (payload) {
       return { entry: payload }
     } else {
-      return { entry: await findEntryById(params.id) }
+      return { entry: await findEntryBySlug(params.id) }
     }
   }
 }

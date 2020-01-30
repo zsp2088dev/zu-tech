@@ -45,8 +45,8 @@ export const findAllEntriesWithConfig = (config, contentType) => {
     })
 }
 
-// IDを指定して特定の記事を取得
-export const findEntryById = (id) => {
+// slugを指定して特定の記事を取得
+export const findEntryBySlug = (slug) => {
   const config = {
     space: process.env.CTF_SPACE_ID,
     accessToken: process.env.CTF_ACCESS_TOKEN
@@ -57,7 +57,7 @@ export const findEntryById = (id) => {
   return client
     .getEntries({
       content_type: contentType,
-      'fields.slug': id
+      'fields.slug': slug
     })
     .then((mapEntries) => {
       return entries(mapEntries.items)[0]
