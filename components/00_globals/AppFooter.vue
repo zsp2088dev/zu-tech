@@ -1,9 +1,11 @@
 <template>
-  <v-footer absolute>
-    <v-col cols="12" class="text-center">
-      <small class="copyright">© 2020 ZU TECH.</small>
-    </v-col>
-  </v-footer>
+  <div style="margin-top: 50px">
+    <v-footer absolute>
+      <v-col cols="12" class="text-center">
+        <small class="copyright">© 2020 ZU TECH.</small>
+      </v-col>
+    </v-footer>
+  </div>
 </template>
 
 <script>
