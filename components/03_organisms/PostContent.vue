@@ -59,6 +59,7 @@ export default {
 
   a {
     text-decoration: none;
+    color: $primary !important;
   }
 
   ul,
