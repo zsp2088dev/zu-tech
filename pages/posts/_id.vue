@@ -13,7 +13,7 @@
 
     <share-item-list :title="entry.title" />
 
-    <post-content :body="entry.body" />
+    <post-content :body="entry.body" class="post-content" />
   </v-container>
 </template>
 
@@ -87,5 +87,9 @@ export default {
 <style scoped lang="scss">
 .post-page {
   max-width: 800px;
+}
+
+.post-content {
+  margin-bottom: 50px;
 }
 </style>
