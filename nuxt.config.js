@@ -1,6 +1,5 @@
-import { createClient } from 'contentful'
 import website from './config/website'
-import { findAllEntries, findAllEntriesWithConfig } from './plugins/contentful'
+import { findAllEntriesWithConfig } from './plugins/contentful'
 
 require('dotenv').config()
 
