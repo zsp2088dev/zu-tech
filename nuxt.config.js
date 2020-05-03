@@ -54,9 +54,8 @@ export default {
     link: [
       {
         rel: 'icon',
-        type: 'image/png',
-        sizes: '32×32',
-        href: '/favicon.png'
+        type: 'image/svg+xml',
+        href: '/favicon.svg'
       }
     ]
   },
