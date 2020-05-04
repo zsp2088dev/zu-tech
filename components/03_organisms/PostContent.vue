@@ -9,6 +9,7 @@
 </template>
 
 <script>
+import Prism from '~/pluings/prism'
 export default {
   name: 'PostContent',
   props: {
@@ -21,6 +22,9 @@ export default {
     content() {
       return this.$md.render(this.body)
     }
+  },
+  mounted() {
+    Prism.highlightAll()
   }
 }
 </script>
