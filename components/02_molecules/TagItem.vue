@@ -12,13 +12,13 @@ export default {
   props: {
     tag: {
       type: String,
-      default: ''
+      default: '',
     },
     selected: {
       type: Boolean,
-      default: false
-    }
-  }
+      default: false,
+    },
+  },
 }
 </script>
 

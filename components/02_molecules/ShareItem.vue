@@ -13,18 +13,18 @@ export default {
   props: {
     title: {
       type: String,
-      default: ''
+      default: '',
     },
     service: {
       type: String,
-      default: ''
-    }
+      default: '',
+    },
   },
   computed: {
     shareUrl() {
       const url = `${process.env.website.url}${this.$route.path}`
       return generateShareUrl(this.service, this.title, url)
-    }
-  }
+    },
+  },
 }
 </script>

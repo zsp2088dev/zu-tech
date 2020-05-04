@@ -2,26 +2,30 @@
   <v-container>
     <v-row>
       <v-col cols="auto">
-        <div v-html="content" class="markdown" />
+        <div class="markdown" v-html="content" />
       </v-col>
     </v-row>
   </v-container>
 </template>
 
 <script>
+import Prism from '../../plugins/prism'
 export default {
   name: 'PostContent',
   props: {
     body: {
       type: String,
-      default: ''
-    }
+      default: '',
+    },
   },
   computed: {
     content() {
       return this.$md.render(this.body)
-    }
-  }
+    },
+  },
+  mounted() {
+    Prism.highlightAll()
+  },
 }
 </script>
 

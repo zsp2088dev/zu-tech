@@ -26,6 +26,13 @@ import ShareItemList from '../../components/03_organisms/ShareItemList'
 
 export default {
   components: { ShareItemList, PostContent, PostImg, PostTitle },
+  async asyncData({ params, payload }) {
+    if (payload) {
+      return { entry: payload }
+    } else {
+      return { entry: await findEntryBySlug(params.id) }
+    }
+  },
   head() {
     return {
       title: `${this.entry.title} | ${process.env.website.title}`,
@@ -33,54 +40,47 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: this.entry.text
+          content: this.entry.text,
         },
         {
           hid: 'og:site_name',
           property: 'og:site_name',
-          content: `${this.entry.title} | ${process.env.website.title}`
+          content: `${this.entry.title} | ${process.env.website.title}`,
         },
         {
           hid: 'og:type',
           property: 'og:type',
-          content: 'article'
+          content: 'article',
         },
         {
           hid: 'og:url',
           property: 'og:url',
-          content: `${process.env.website.url}${this.$route.path}`
+          content: `${process.env.website.url}${this.$route.path}`,
         },
         {
           hid: 'og:title',
           property: 'og:title',
-          content: `${this.entry.title} | ${process.env.website.title}`
+          content: `${this.entry.title} | ${process.env.website.title}`,
         },
 
         {
           hid: 'og:description',
           property: 'og:description',
-          content: this.entry.text
+          content: this.entry.text,
         },
         {
           hid: 'og:image',
           property: 'og:image',
-          content: this.entry.src
+          content: this.entry.src,
         },
         {
           hid: 'twitter:card',
           name: 'twitter:card',
-          content: 'summary_large_image'
-        }
-      ]
+          content: 'summary_large_image',
+        },
+      ],
     }
   },
-  async asyncData({ params, payload }) {
-    if (payload) {
-      return { entry: payload }
-    } else {
-      return { entry: await findEntryBySlug(params.id) }
-    }
-  }
 }
 </script>
 

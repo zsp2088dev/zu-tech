@@ -11,6 +11,6 @@
 import AppHeader from '../components/00_globals/AppHeader'
 import AppFooter from '../components/00_globals/AppFooter'
 export default {
-  components: { AppFooter, AppHeader }
+  components: { AppFooter, AppHeader },
 }
 </script>

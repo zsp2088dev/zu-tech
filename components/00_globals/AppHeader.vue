@@ -1,6 +1,6 @@
 <template>
   <v-container fluid class="app-header">
-    <v-row justify="center" align-content="center" style="height: 100px">
+    <v-row justify="center" align-content="center" style="height: 100px;">
       <v-col cols="auto">
         <app-logo />
       </v-col>
@@ -12,7 +12,7 @@
 import AppLogo from './AppLogo'
 export default {
   name: 'AppHeader',
-  components: { AppLogo }
+  components: { AppLogo },
 }
 </script>
 

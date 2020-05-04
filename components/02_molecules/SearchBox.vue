@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <v-row justify="center" align-content="center" style="height: 100px">
+    <v-row justify="center" align-content="center" style="height: 100px;">
       <v-col cols="auto">
         <label>
           <input
@@ -20,7 +20,7 @@ export default {
   name: 'SearchBox',
   data() {
     return {
-      keyword: ''
+      keyword: '',
     }
   },
   computed: {
@@ -31,9 +31,9 @@ export default {
       set(keyword) {
         this.keyword = keyword
         this.$emit('keyword', keyword)
-      }
-    }
-  }
+      },
+    },
+  },
 }
 </script>
 

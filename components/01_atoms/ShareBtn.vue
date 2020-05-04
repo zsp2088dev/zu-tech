@@ -2,10 +2,10 @@
   <img
     :src="src"
     :alt="service"
-    @mouseover="active = true"
-    @mouseleave="active = false"
     height="50"
     width="50"
+    @mouseover="active = true"
+    @mouseleave="active = false"
   />
 </template>
 
@@ -15,19 +15,19 @@ export default {
   props: {
     service: {
       type: String,
-      default: ''
-    }
+      default: '',
+    },
   },
   data() {
     return {
-      active: false
+      active: false,
     }
   },
   computed: {
     src() {
       const status = this.active ? 'on' : 'off'
       return require(`@/assets/icons/${this.service}-${status}.svg`)
-    }
-  }
+    },
+  },
 }
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <nuxt-link :to="url" style="text-decoration: none">
+  <nuxt-link :to="url" style="text-decoration: none;">
     <v-hover v-slot:default="{ hover }">
       <v-card
         :elevation="hover ? 6 : 2"
@@ -26,25 +26,25 @@ export default {
   props: {
     slug: {
       type: String,
-      default: ''
+      default: '',
     },
     src: {
       type: String,
-      default: ''
+      default: '',
     },
     title: {
       type: String,
-      default: ''
+      default: '',
     },
     text: {
       type: String,
-      default: ''
-    }
+      default: '',
+    },
   },
   computed: {
     url() {
       return `/posts/${this.slug}`
-    }
-  }
+    },
+  },
 }
 </script>

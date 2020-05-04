@@ -10,9 +10,9 @@ export default {
   props: {
     tag: {
       type: String,
-      default: ''
-    }
-  }
+      default: '',
+    },
+  },
 }
 </script>
 

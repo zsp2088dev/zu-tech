@@ -8,13 +8,13 @@ export default {
   props: {
     date: {
       type: Date,
-      default: new Date()
-    }
+      default: new Date(),
+    },
   },
   computed: {
     createdAt() {
       return this.date
-    }
-  }
+    },
+  },
 }
 </script>

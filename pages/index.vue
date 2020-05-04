@@ -15,13 +15,13 @@ export default {
   components: { SearchBox, TagItemList, CardItemList },
   data() {
     return {
-      keyword: ''
+      keyword: '',
     }
   },
   computed: {
     filteredEntries() {
       return getFilteredEntries(this.keyword, this.entries)
-    }
+    },
   },
   async asyncData() {
     const entries = await findAllEntries()
@@ -30,7 +30,7 @@ export default {
   methods: {
     setKeyword(keyword) {
       this.keyword = keyword
-    }
-  }
+    },
+  },
 }
 </script>

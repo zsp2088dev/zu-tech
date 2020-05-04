@@ -8,12 +8,12 @@ export default {
   props: {
     title: {
       type: String,
-      default: ''
+      default: '',
     },
     src: {
       type: String,
-      default: ''
-    }
-  }
+      default: '',
+    },
+  },
 }
 </script>

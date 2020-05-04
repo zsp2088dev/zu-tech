@@ -7,7 +7,7 @@ export const getFilteredEntries = (keyword, entries) => {
 
   const options = {
     threshold: 0.3,
-    keys: ['title', 'tags']
+    keys: ['title', 'tags'],
   }
   return new Fuse(entries, options).search(keyword)
 }
