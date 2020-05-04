@@ -16,13 +16,13 @@ export default {
   props: {
     title: {
       type: String,
-      default: ''
-    }
+      default: '',
+    },
   },
   data() {
     return {
-      services: ['Twitter', 'Facebook', 'Pocket', 'Hatena']
+      services: ['Twitter', 'Facebook', 'Pocket', 'Hatena'],
     }
-  }
+  },
 }
 </script>

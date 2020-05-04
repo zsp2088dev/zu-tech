@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <v-row justify="center" align-content="center" style="height: 50px">
+    <v-row justify="center" align-content="center" style="height: 50px;">
       <v-col v-for="(tag, index) in tags" :key="index" cols="auto">
         <div @click="click(tag)">
           <tag-item :tag="tag" />
@@ -17,13 +17,13 @@ export default {
   components: { TagItem },
   data() {
     return {
-      tags: ['ALL', 'WEB', 'DESIGN']
+      tags: ['ALL', 'WEB', 'DESIGN'],
     }
   },
   methods: {
     click(tag) {
       this.$emit('keyword', tag)
-    }
-  }
+    },
+  },
 }
 </script>

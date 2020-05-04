@@ -21,8 +21,8 @@ export default {
   props: {
     cards: {
       type: Array,
-      default: () => []
-    }
-  }
+      default: () => [],
+    },
+  },
 }
 </script>

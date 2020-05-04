@@ -13,51 +13,51 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: website.description
+        content: website.description,
       },
       {
         hid: 'og:site_name',
         property: 'og:site_name',
-        content: website.title
+        content: website.title,
       },
       {
         hid: 'og:type',
         property: 'og:type',
-        content: 'website'
+        content: 'website',
       },
       {
         hid: 'og:url',
         property: 'og:url',
-        content: website.url
+        content: website.url,
       },
       {
         hid: 'og:title',
         property: 'og:title',
-        content: website.title
+        content: website.title,
       },
       {
         hid: 'og:description',
         property: 'og:description',
-        content: website.description
+        content: website.description,
       },
       {
         hid: 'og:image',
         property: 'og:image',
-        content: `${website.url}/image.png`
+        content: `${website.url}/image.png`,
       },
       {
         hid: 'twitter:card',
         name: 'twitter:card',
-        content: 'summary_large_image'
-      }
+        content: 'summary_large_image',
+      },
     ],
     link: [
       {
         rel: 'icon',
         type: 'image/svg+xml',
-        href: '/favicon.svg'
-      }
-    ]
+        href: '/favicon.svg',
+      },
+    ],
   },
   loading: { color: '#fff' },
   css: [],
@@ -66,17 +66,17 @@ export default {
   modules: ['@nuxtjs/pwa', '@nuxtjs/dotenv', '@nuxtjs/markdownit'],
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
-    treeShake: true
+    treeShake: true,
   },
   markdownit: {
     injected: true,
     breaks: true,
     html: true,
     linkify: true,
-    typography: true
+    typography: true,
   },
   build: {
-    extend(config, ctx) {}
+    extend(config, ctx) {},
   },
   generate: {
     async routes() {
@@ -84,7 +84,7 @@ export default {
         space: process.env.CTF_SPACE_ID,
         accessToken: process.env.CTF_ACCESS_TOKEN,
         timeout: 60000,
-        retryLimit: 10
+        retryLimit: 10,
       }
       const entries = await findAllEntriesWithConfig(
         config,
@@ -93,15 +93,15 @@ export default {
       return entries.map((entry) => {
         return {
           route: `/posts/${entry.slug}`,
-          payload: entry
+          payload: entry,
         }
       })
-    }
+    },
   },
   env: {
     website,
     CTF_SPACE_ID: process.env.CTF_SPACE_ID,
     CTF_ACCESS_TOKEN: process.env.CTF_ACCESS_TOKEN,
-    CTF_CONTENT_TYPE_ID: process.env.CTF_CONTENT_TYPE_ID
-  }
+    CTF_CONTENT_TYPE_ID: process.env.CTF_CONTENT_TYPE_ID,
+  },
 }

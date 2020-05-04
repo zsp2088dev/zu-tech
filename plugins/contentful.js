@@ -9,7 +9,7 @@ const entries = (mapEntries) => {
       slug: entry.fields.slug,
       src: `https:${entry.fields.image.fields.file.url}`,
       body: entry.fields.body,
-      tags: entry.fields.tags
+      tags: entry.fields.tags,
     }
   })
 }
@@ -18,7 +18,7 @@ const entries = (mapEntries) => {
 export const findAllEntries = () => {
   const config = {
     space: process.env.CTF_SPACE_ID,
-    accessToken: process.env.CTF_ACCESS_TOKEN
+    accessToken: process.env.CTF_ACCESS_TOKEN,
   }
   const contentType = process.env.CTF_CONTENT_TYPE_ID
   const client = createClient(config)
@@ -26,7 +26,7 @@ export const findAllEntries = () => {
   return client
     .getEntries({
       content_type: contentType,
-      order: '-sys.createdAt'
+      order: '-sys.createdAt',
     })
     .then((mapEntries) => {
       return entries(mapEntries.items)
@@ -38,7 +38,7 @@ export const findAllEntriesWithConfig = (config, contentType) => {
   const client = createClient(config)
   return client
     .getEntries({
-      content_type: contentType
+      content_type: contentType,
     })
     .then((mapEntries) => {
       return entries(mapEntries.items)
@@ -49,7 +49,7 @@ export const findAllEntriesWithConfig = (config, contentType) => {
 export const findEntryBySlug = (slug) => {
   const config = {
     space: process.env.CTF_SPACE_ID,
-    accessToken: process.env.CTF_ACCESS_TOKEN
+    accessToken: process.env.CTF_ACCESS_TOKEN,
   }
   const contentType = process.env.CTF_CONTENT_TYPE_ID
   const client = createClient(config)
@@ -57,7 +57,7 @@ export const findEntryBySlug = (slug) => {
   return client
     .getEntries({
       content_type: contentType,
-      'fields.slug': slug
+      'fields.slug': slug,
     })
     .then((mapEntries) => {
       return entries(mapEntries.items)[0]

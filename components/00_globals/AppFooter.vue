@@ -1,5 +1,5 @@
 <template>
-  <div style="margin-top: 50px">
+  <div style="margin-top: 50px;">
     <v-footer absolute>
       <v-col cols="12" class="text-center">
         <small class="copyright">© 2020 ZU TECH.</small>
@@ -10,7 +10,7 @@
 
 <script>
 export default {
-  name: 'AppFooter'
+  name: 'AppFooter',
 }
 </script>
 
