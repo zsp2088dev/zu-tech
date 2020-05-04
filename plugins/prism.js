@@ -1,4 +1,3 @@
-// app/plugins/prism.js
+import 'prism-themes/themes/prism-nord.css'
 import Prism from 'prismjs'
-import 'prismjs/themes/prism-tomorrow.css'
 export default Prism
