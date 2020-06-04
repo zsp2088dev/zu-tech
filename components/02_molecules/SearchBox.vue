@@ -53,5 +53,9 @@ export default {
   &:focus {
     outline: 0;
   }
+
+  @media screen and (max-width: 480px) {
+    width: 300px;
+  }
 }
 </style>

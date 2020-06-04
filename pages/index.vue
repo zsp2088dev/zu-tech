@@ -1,7 +1,7 @@
 <template>
   <div>
-    <search-box @keyword="setKeyword" />
-    <tag-item-list @keyword="setKeyword" />
+    <search-box style="margin-top: 30px;" @keyword="setKeyword" />
+    <tag-item-list style="margin-top: -35px;" @keyword="setKeyword" />
     <card-item-list :cards="filteredEntries" />
   </div>
 </template>
@@ -13,6 +13,10 @@ import SearchBox from '../components/02_molecules/SearchBox'
 import { getFilteredEntries } from '../plugins/fuse'
 export default {
   components: { SearchBox, TagItemList, CardItemList },
+  async asyncData() {
+    const entries = await findAllEntries()
+    return { entries }
+  },
   data() {
     return {
       keyword: '',
@@ -22,10 +26,6 @@ export default {
     filteredEntries() {
       return getFilteredEntries(this.keyword, this.entries)
     },
-  },
-  async asyncData() {
-    const entries = await findAllEntries()
-    return { entries }
   },
   methods: {
     setKeyword(keyword) {
