@@ -1,7 +1,7 @@
 <template>
   <div>
-    <search-box @keyword="setKeyword" />
-    <tag-item-list @keyword="setKeyword" />
+    <search-box style="margin-top: 30px;" @keyword="setKeyword" />
+    <tag-item-list style="margin-top: -35px;" @keyword="setKeyword" />
     <card-item-list :cards="filteredEntries" />
   </div>
 </template>
