@@ -30,7 +30,7 @@ export default {
     if (payload) {
       return { entry: payload }
     } else {
-      return { entry: await findEntryBySlug(params.id) }
+      return { entry: await findEntryBySlug(params.slug) }
     }
   },
   head() {
